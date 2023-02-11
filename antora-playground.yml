@@ -1,0 +1,12 @@
+site:
+  title: 133 ROTC
+  start_page: rules::init.adoc 
+content:
+  sources:
+  # - url: https://github.com/133rotc/rules
+  - url : ./
+    branches: HEAD
+ui: 
+  bundle:
+    url: ./ui-bundle
+    snapshot: true
