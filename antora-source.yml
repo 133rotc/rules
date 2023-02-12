@@ -1,6 +1,6 @@
 site:
   title: 133 ROTC
-  start_page: rules::init.adoc 
+  start_page: 133ROTC::init.adoc 
 content:
   sources:
   - url: https://github.com/133rotc/rules
