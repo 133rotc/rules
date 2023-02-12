@@ -3,8 +3,8 @@ site:
   start_page: 133ROTC::init.adoc 
 content:
   sources:
-  - url: https://github.com/133rotc/rules
-  # - url : ./
+  # - url: https://github.com/133rotc/rules
+  - url : ./
     branches: HEAD
 ui: 
   bundle:
