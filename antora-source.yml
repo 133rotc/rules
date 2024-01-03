@@ -5,7 +5,7 @@ content:
   sources:
   - url: https://github.com/133rotc/rules
   # - url : ./
-    branches: HEAD
+    branches: 2024.1.1, 2023.1.1
 ui: 
   bundle:
     url: ./ui-bundle
