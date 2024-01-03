@@ -1,2 +1,3 @@
 * xref:init.adoc[]
+* xref:version.adoc[]
 
