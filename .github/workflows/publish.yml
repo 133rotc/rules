@@ -2,18 +2,20 @@ name: Publish to GitHub Pages
 on:
   push:
     branches: [main]
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Install Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
-        node-version: '16'
-    - name: Install Antora
-      run: npm i antora
+        node-version: '20'
+    - name: Install Dependencies
+      run: npm install
     - name: Generate Site
       run: npx antora antora-source.yml
     - name: Publish to GitHub Pages

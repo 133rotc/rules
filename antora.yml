@@ -1,9 +1,11 @@
 name: 133ROTC
 title: 55TH ROTC
-version: 2024.1.1
+version: 2026.1.1
 start_page: init.adoc
 asciidoc:
   attributes:
+    description: 홍익대학교 ROTC 55기 동기회 회칙
+    keywords: ROTC, 55기, 동기회, 회칙
     source-language: asciidoc@
     table-caption: false
 nav:
