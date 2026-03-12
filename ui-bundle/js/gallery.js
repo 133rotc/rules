@@ -11,7 +11,7 @@
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML =
       '<div class="lightbox-container">' +
-        '<img class="lightbox-img" src="" alt="">' +
+        '<img class="lightbox-img" alt="">' +
       '</div>' +
       '<button class="lightbox-close" aria-label="닫기">&times;</button>' +
       '<button class="lightbox-prev" aria-label="이전">&#8249;</button>' +
@@ -24,52 +24,55 @@
     var images  = [];
     var current = 0;
 
+    /* Shared display update — called by openLightbox, prev, next */
+    function updateDisplay() {
+      img.src = images[current];
+      counter.textContent = (current + 1) + ' / ' + images.length;
+    }
+
     /* Collect all grid images */
     document.querySelectorAll('.openblock.photo-grid .imageblock img').forEach(function (el) {
       var idx = images.length;
       images.push(el.src);
-      el.addEventListener('click', function () { open(idx); });
+      el.addEventListener('click', function () { openLightbox(idx); });
     });
 
-    function open(idx) {
+    function openLightbox(idx) {
       current = idx;
-      img.src = images[current];
-      counter.textContent = (current + 1) + ' / ' + images.length;
+      updateDisplay();
       overlay.classList.add('is-active');
       document.documentElement.style.overflowY = 'hidden';
     }
 
-    function close() {
+    function closeLightbox() {
       overlay.classList.remove('is-active');
       document.documentElement.style.overflowY = '';
-      img.src = '';
+      img.removeAttribute('src');
     }
 
     function prev() {
       current = (current - 1 + images.length) % images.length;
-      img.src = images[current];
-      counter.textContent = (current + 1) + ' / ' + images.length;
+      updateDisplay();
     }
 
     function next() {
       current = (current + 1) % images.length;
-      img.src = images[current];
-      counter.textContent = (current + 1) + ' / ' + images.length;
+      updateDisplay();
     }
 
-    overlay.querySelector('.lightbox-close').addEventListener('click', close);
+    overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
     overlay.querySelector('.lightbox-prev').addEventListener('click', prev);
     overlay.querySelector('.lightbox-next').addEventListener('click', next);
 
     /* Click backdrop to close */
     overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) close();
+      if (e.target === overlay) closeLightbox();
     });
 
     /* Keyboard */
     document.addEventListener('keydown', function (e) {
       if (!overlay.classList.contains('is-active')) return;
-      if (e.key === 'Escape' || e.key === 'Esc') close();
+      if (e.key === 'Escape' || e.key === 'Esc') closeLightbox();
       if (e.key === 'ArrowLeft')  prev();
       if (e.key === 'ArrowRight') next();
     });
