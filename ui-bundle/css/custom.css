@@ -1,0 +1,306 @@
+/* =============================================
+   133 ROTC 55기 동기회 - Custom UI Stylesheet
+   ============================================= */
+
+/* Korean Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* ---- Root Variables ---- */
+:root {
+  --color-primary: #1a3a6c;
+  --color-primary-dark: #0f2549;
+  --color-accent: #c0392b;
+  --color-accent-hover: #a93226;
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: #dee2e6;
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-nav-bg: #f4f6f8;
+  --color-nav-active: #1a3a6c;
+  --radius: 6px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.10);
+}
+
+/* ---- Base ---- */
+html, body {
+  font-family: 'Noto Sans KR', Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  background: var(--color-primary) !important;
+  border-bottom: 3px solid var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.navbar-brand .navbar-item:first-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: #fff !important;
+}
+
+.navbar-end .navbar-link,
+.navbar-end > .navbar-item {
+  color: rgba(255,255,255,.85) !important;
+}
+
+.navbar-end .navbar-item.has-dropdown:hover .navbar-link,
+.navbar-end .navbar-link:hover,
+.navbar-end > a.navbar-item:hover {
+  background: var(--color-primary-dark) !important;
+  color: #fff !important;
+}
+
+/* ---- Nav (sidebar) ---- */
+.nav {
+  background: var(--color-nav-bg);
+  border-right: 1px solid var(--color-border);
+}
+
+.nav-menu {
+  padding: .75rem 1rem;
+}
+
+.nav-menu h3.title {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+}
+
+.nav-item {
+  margin-top: .3em;
+}
+
+.nav-link, .nav-text {
+  color: var(--color-text) !important;
+  border-radius: var(--radius);
+  padding: .2em .4em;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary) !important;
+  background: rgba(26,58,108,.06);
+  text-decoration: none !important;
+}
+
+.is-current-page > .nav-link,
+.is-current-page > .nav-text {
+  color: var(--color-primary) !important;
+  font-weight: 700;
+  background: rgba(26,58,108,.08);
+}
+
+/* Version selector */
+.nav-panel-explore .component .title {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.nav-panel-explore .component .version a {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: .25rem;
+}
+
+.nav-panel-explore .component .is-current a {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+/* ---- Toolbar ---- */
+.toolbar {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Document Content ---- */
+.doc {
+  color: var(--color-text);
+  line-height: 1.75;
+  max-width: 48rem;
+  font-size: .97rem;
+}
+
+.doc > h1.page:first-child {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 3px solid var(--color-accent);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.doc h2:not(.discrete) {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: .3rem;
+  margin-top: 2.2rem;
+  font-weight: 700;
+}
+
+.doc h3:not(.discrete) {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+.doc a {
+  color: var(--color-primary);
+}
+
+.doc a:hover {
+  color: var(--color-accent);
+}
+
+/* Example blocks (====) */
+.doc .exampleblock > .content {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tables */
+.doc table.tableblock {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  font-size: .9rem;
+}
+
+.doc table.tableblock thead tr {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.doc table.tableblock thead th {
+  color: #fff;
+  font-weight: 600;
+  border-color: rgba(255,255,255,.2);
+}
+
+.doc table.stripes-odd > tbody > tr:nth-of-type(odd) {
+  background: #f4f6f8;
+}
+
+/* ---- TOC ---- */
+.toc-menu h3 {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+}
+
+.toc .toc-menu a:hover,
+.toc .toc-menu a.is-active {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+/* ---- Gallery ---- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.gallery-grid .imageblock {
+  margin: 0 !important;
+  align-items: stretch;
+}
+
+.gallery-grid .imageblock img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+
+.gallery-grid .imageblock img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+
+/* Fallback: images without grid wrapper */
+.doc .gallery .imageblock {
+  display: inline-block;
+  width: calc(33.33% - .75rem);
+  margin: .375rem !important;
+  vertical-align: top;
+}
+
+.doc .gallery .imageblock img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.doc .gallery .imageblock img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+}
+
+@media screen and (max-width: 768px) {
+  .doc .gallery .imageblock {
+    width: calc(50% - .5rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .doc .gallery .imageblock {
+    width: 100%;
+    margin: .375rem 0 !important;
+  }
+}
+
+/* ---- Footer ---- */
+footer.footer {
+  background: var(--color-primary);
+  color: rgba(255,255,255,.8);
+  font-size: .82rem;
+  padding: 1.25rem 1.5rem;
+}
+
+footer.footer a {
+  color: rgba(255,255,255,.9);
+  text-decoration: underline;
+}
+
+/* ---- Version badge in explore panel ---- */
+.nav-panel-explore .context {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ---- Admonition Blocks ---- */
+.doc .admonitionblock td.content {
+  background: #f8f9fc;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* ---- Page versions dropdown ---- */
+.page-versions .version-menu {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
