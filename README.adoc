@@ -1,1 +1,97 @@
-= 133 ROTC 55
+= 133 ROTC 55기 동기회 회칙
+:toc:
+:toc-title: 목차
+
+== 프로젝트 소개
+
+홍익대학교 ROTC 55기 동기회 회칙을 관리하고 배포하기 위한 문서 사이트입니다.
+Antora를 사용하여 AsciiDoc 형식의 회칙 문서를 웹사이트로 자동 변환하며,
+GitHub Actions를 통해 GitHub Pages에 자동 배포됩니다.
+
+== 기술 스택
+
+* *문서 형식*: AsciiDoc
+* *정적 사이트 생성기*: Antora
+* *템플릿 엔진*: Handlebars
+* *CI/CD*: GitHub Actions
+* *배포*: GitHub Pages
+
+== 로컬 개발 환경 설정
+
+=== 사전 요구사항
+
+* Node.js 20 이상
+* npm
+
+=== 설치 및 실행
+
+[source,bash]
+----
+# 저장소 클론
+git clone git@github.com:133rotc/rules.git
+cd rules
+
+# 의존성 설치
+npm install
+
+# 사이트 빌드
+npm run build
+
+# 빌드 결과는 build/site/ 디렉토리에 생성됩니다
+----
+
+== 프로젝트 구조
+
+----
+rules/
+├── .github/workflows/     # GitHub Actions 워크플로우
+├── modules/ROOT/          # 문서 컨텐츠
+│   ├── pages/            # 페이지 문서 (AsciiDoc)
+│   └── nav.adoc          # 네비게이션 구조
+├── ui-bundle/            # UI 테마 (CSS, JS, 템플릿)
+├── antora.yml            # Antora 프로젝트 설정
+├── antora-source.yml     # Antora 빌드 설정
+└── package.json          # Node.js 의존성
+----
+
+== 회칙 수정 방법
+
+. `modules/ROOT/pages/` 디렉토리의 AsciiDoc 파일 수정
+. 변경사항 커밋 및 푸시
+. GitHub Actions가 자동으로 빌드 및 배포
+
+=== 새 버전 생성
+
+새로운 버전의 회칙을 만들 때:
+
+[source,bash]
+----
+# 새 버전 브랜치 생성
+git checkout -b YYYY.M.D
+
+# antora.yml의 version 업데이트
+# version: YYYY.M.D
+
+# 회칙 내용 수정 후 커밋
+git add .
+git commit -m "Update 회칙 to version YYYY.M.D"
+git push origin YYYY.M.D
+----
+
+== 자동 배포
+
+`main` 브랜치에 푸시하면 GitHub Actions가 자동으로:
+
+. 의존성 설치
+. Antora로 사이트 생성
+. GitHub Pages에 배포
+
+배포된 사이트: https://133rotc.github.io/rules
+
+== 라이선스
+
+Mozilla Public License 2.0
+
+== 문의
+
+이슈 및 문의사항은 GitHub Issues에 등록해주세요.
