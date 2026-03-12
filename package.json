@@ -1,0 +1,22 @@
+{
+  "name": "133rotc-rules",
+  "version": "2026.1.1",
+  "description": "홍익대학교 ROTC 55기 동기회 회칙",
+  "private": true,
+  "scripts": {
+    "build": "antora antora-source.yml",
+    "dev": "antora antora-source.yml --fetch"
+  },
+  "devDependencies": {
+    "@antora/cli": "^3.1.0",
+    "@antora/site-generator": "^3.1.0"
+  },
+  "keywords": [
+    "ROTC",
+    "55기",
+    "동기회",
+    "회칙"
+  ],
+  "author": "133 ROTC 55기 동기회",
+  "license": "MPL-2.0"
+}
