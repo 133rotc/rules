@@ -41,7 +41,7 @@
 
 /* ---- Base ---- */
 html, body {
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(160deg, #f0f2f8 0%, #e8ecf6 100%) fixed;
   color: var(--text);
   word-break: keep-all;
@@ -184,12 +184,12 @@ body          { padding-top: 3.25rem !important; }
 
 /* ---- Main content card ---- */
 .doc {
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  line-height: 1.85;
+  line-height: 2.0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 4px solid var(--navy);
+  border-top: 4px solid var(--gold);
   border-radius: var(--radius-md);
   padding: 2.25rem 2.75rem 3rem;
   margin: 1.5rem auto;
@@ -208,36 +208,28 @@ body          { padding-top: 3.25rem !important; }
   }
 }
 
-/* Page title with gold underline */
+/* Page title */
 .doc > h1.page:first-child {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.65rem;
+  font-weight: 800;
   color: var(--navy-dark);
-  padding-bottom: 0;
+  letter-spacing: -.02em;
+  padding-bottom: .6rem;
   margin-bottom: 1.75rem;
   margin-top: 0;
-}
-
-.doc > h1.page:first-child::after {
-  content: '';
-  display: block;
-  margin-top: .6rem;
-  height: 3px;
-  background: var(--grad-gold);
-  border-radius: 2px;
+  border-bottom: 2px solid var(--border);
 }
 
 /* Section headings */
 .doc h2:not(.discrete) {
-  color: var(--navy);
+  color: var(--navy-dark);
   font-size: 1.08rem;
   font-weight: 700;
   margin-top: 2.5rem;
-  padding: .4rem .75rem .4rem .9rem;
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--navy);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: .1rem 0 .1rem .75rem;
+  background: none;
+  border: none;
+  border-left: 3px solid var(--gold);
 }
 
 .doc h3:not(.discrete) {
@@ -472,7 +464,7 @@ body          { padding-top: 3.25rem !important; }
   transform: translateX(-50%);
   color: var(--gold);
   font-size: .8rem;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   pointer-events: none;
   z-index: 10000;
   letter-spacing: .08em;
