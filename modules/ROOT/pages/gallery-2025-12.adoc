@@ -1,0 +1,14 @@
+= 2025년 12월 20일
+:page-role: gallery-page
+
+[.photo-grid]
+--
+image::5.jpeg[사진 5]
+image::6.jpeg[사진 6]
+image::7.jpeg[사진 7]
+image::8.jpeg[사진 8]
+image::9.jpeg[사진 9]
+image::10.jpeg[사진 10]
+image::11.jpeg[사진 11]
+image::12.jpeg[사진 12]
+--

@@ -1,4 +1,6 @@
 * xref:init.adoc[]
 * xref:version.adoc[]
 * xref:gallery.adoc[]
+** xref:gallery-2025-10.adoc[2025년 10월 2일]
+** xref:gallery-2025-12.adoc[2025년 12월 20일]
 

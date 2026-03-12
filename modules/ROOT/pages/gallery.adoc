@@ -1,18 +1,6 @@
 = 사진 갤러리
-:hardbreaks:
 
-== 동기회 사진
+동기회 활동 사진을 날짜별로 모아둔 갤러리입니다.
 
-[.gallery]
-image::1.jpeg[]
-image::2.jpeg[]
-image::3.jpeg[]
-image::4.jpeg[]
-image::5.jpeg[]
-image::6.jpeg[]
-image::7.jpeg[]
-image::8.jpeg[]
-image::9.jpeg[]
-image::10.jpeg[]
-image::11.jpeg[]
-image::12.jpeg[]
+* xref:gallery-2025-10.adoc[2025년 10월 2일]
+* xref:gallery-2025-12.adoc[2025년 12월 20일]
