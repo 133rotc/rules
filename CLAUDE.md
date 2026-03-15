@@ -54,7 +54,18 @@ To add a landing page or new `.adoc` page:
 
 ### Adding Images
 
-Images referenced from `.adoc` content should be placed in the content branch under the `modules/ROOT/images/` directory. Images used only by the UI (icons, backgrounds) go in `ui-bundle/img/` in `main`.
+이미지는 **날짜별 폴더**로 관리합니다. UI 전용 이미지(아이콘, 배경)만 `main`의 `ui-bundle/img/`에 넣습니다.
+
+```
+modules/ROOT/images/
+├── 2025-10-02/    ← 행사 날짜로 폴더 생성
+│   └── 1.jpeg, 2.jpeg ...
+├── 2025-12-20/
+│   └── 5.jpeg ~ 12.jpeg
+└── landing.jpg
+```
+
+adoc에서 참조: `image::2025-10-02/1.jpeg[설명]`
 
 ## Gallery 구조 및 사진 추가 방법
 
@@ -62,7 +73,10 @@ Images referenced from `.adoc` content should be placed in the content branch un
 
 ```
 modules/ROOT/
-├── images/                     ← 모든 사진 파일 저장
+├── images/
+│   ├── YYYY-MM-DD/             ← 행사 날짜별 폴더로 분리
+│   │   └── 1.jpeg, 2.jpeg ...
+│   └── landing.jpg             ← 랜딩 히어로 이미지
 ├── pages/
 │   ├── landing.adoc            ← 랜딩 페이지 (갤러리 미리보기)
 │   ├── gallery.adoc            ← 갤러리 인덱스 (연도별 목록)
