@@ -2,7 +2,6 @@
 * xref:init.adoc[]
 * xref:version.adoc[]
 * xref:gallery.adoc[]
-** xref:gallery-2025-12.adoc[12월 20일 — 송년회 1부]
-** xref:gallery-2025-12-2.adoc[12월 20일 — 송년회 2부]
+** xref:gallery-2025-12.adoc[12월 20일 — 송년회]
 ** xref:gallery-2025-10.adoc[10월 2일]
 
