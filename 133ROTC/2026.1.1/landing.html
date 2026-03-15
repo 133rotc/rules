@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>133 ROTC — 홍익대학교 ROTC 55기 동기회</title>
+    <meta name="description" content="홍익대학교 학군단 55기 동기회 공식 사이트">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --navy-dark: #0a1f40;
+        --navy:      #1a3a6c;
+        --gold:      #c9a84c;
+        --gold-light:#e8c97a;
+        --radius-sm: 6px;
+      }
+
+      body {
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--navy-dark);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* ===== HERO ===== */
+      .lp-hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .lp-hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url(../../_/img/landing.jpg);
+        background-size: cover;
+        background-position: center;
+        filter: brightness(.42);
+        transform: scale(1.05);
+        transition: transform 10s ease;
+        will-change: transform;
+      }
+
+      .lp-hero:hover .lp-hero-bg { transform: scale(1.0); }
+
+      .lp-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10,31,64,.4) 0%,
+          rgba(10,31,64,.1) 45%,
+          rgba(10,31,64,.72) 100%
+        );
+      }
+
+      /* ===== TOP NAV ===== */
+      .lp-nav {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+        background: linear-gradient(180deg, rgba(10,31,64,.75) 0%, transparent 100%);
+      }
+
+      .lp-nav-brand {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--gold-light);
+        text-decoration: none;
+        letter-spacing: .06em;
+        text-shadow: 0 1px 6px rgba(0,0,0,.5);
+      }
+
+      .lp-nav-link {
+        font-size: .85rem;
+        color: rgba(255,255,255,.85);
+        text-decoration: none;
+        border: 1px solid rgba(201,168,76,.45);
+        padding: .4rem 1.1rem;
+        border-radius: 2rem;
+        backdrop-filter: blur(4px);
+        transition: background .2s, color .2s, border-color .2s;
+      }
+
+      .lp-nav-link:hover {
+        background: rgba(201,168,76,.18);
+        color: var(--gold-light);
+        border-color: rgba(201,168,76,.8);
+      }
+
+      /* ===== HERO CONTENT ===== */
+      .lp-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        animation: lp-up .9s cubic-bezier(.22,1,.36,1) both;
+      }
+
+      @keyframes lp-up {
+        from { opacity: 0; transform: translateY(32px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .lp-badge {
+        display: inline-block;
+        background: rgba(201,168,76,.14);
+        border: 1px solid rgba(201,168,76,.5);
+        color: var(--gold-light);
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        padding: .35rem 1.1rem;
+        border-radius: 2rem;
+        margin-bottom: 1.6rem;
+        backdrop-filter: blur(6px);
+      }
+
+      .lp-title {
+        font-size: clamp(3rem, 9vw, 5.5rem);
+        font-weight: 900;
+        line-height: 1.0;
+        color: #fff;
+        letter-spacing: -.02em;
+        text-shadow: 0 2px 28px rgba(0,0,0,.55);
+        margin-bottom: .55rem;
+      }
+
+      .lp-title-gold {
+        background: linear-gradient(90deg, #c9a84c 0%, #f0d87a 55%, #c9a84c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .lp-divider {
+        width: 52px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        border-radius: 2px;
+        margin: 1.4rem auto 1.5rem;
+        opacity: .85;
+      }
+
+      .lp-subtitle {
+        font-size: clamp(.95rem, 2.8vw, 1.15rem);
+        color: rgba(255,255,255,.8);
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: .02em;
+        margin-bottom: 2.75rem;
+      }
+
+      /* ===== CTA ===== */
+      .lp-cta-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .lp-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: .65rem;
+        background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+        color: var(--navy-dark) !important;
+        font-size: 1.02rem;
+        font-weight: 800;
+        letter-spacing: .04em;
+        padding: .9rem 2.4rem;
+        border-radius: 3rem;
+        text-decoration: none !important;
+        box-shadow: 0 4px 28px rgba(201,168,76,.5), 0 1px 4px rgba(0,0,0,.25);
+        transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      }
+
+      .lp-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 36px rgba(201,168,76,.65), 0 2px 8px rgba(0,0,0,.3);
+        filter: brightness(1.07);
+      }
+
+      .lp-cta:active { transform: translateY(0); }
+
+      .lp-cta-icon {
+        width: 20px; height: 20px;
+        fill: none;
+        stroke: var(--navy-dark);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+      }
+
+      .lp-cta-sub {
+        font-size: .82rem;
+        color: rgba(255,255,255,.5);
+        text-decoration: none;
+        letter-spacing: .02em;
+        transition: color .2s;
+      }
+
+      .lp-cta-sub:hover { color: rgba(255,255,255,.85); }
+
+      /* ===== SCROLL HINT ===== */
+      .lp-scroll {
+        position: absolute;
+        bottom: 2rem; left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .4rem;
+        opacity: .55;
+        animation: lp-bob 2.2s ease-in-out infinite;
+      }
+
+      @keyframes lp-bob {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50%       { transform: translateX(-50%) translateY(9px); }
+      }
+
+      .lp-scroll-line {
+        width: 1px; height: 36px;
+        background: linear-gradient(180deg, transparent 0%, var(--gold) 100%);
+      }
+
+      .lp-scroll-dot {
+        width: 5px; height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+
+      /* ===== STATS STRIP ===== */
+      .lp-stats {
+        background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+        border-top: 3px solid var(--gold);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .lp-stat {
+        padding: 2.75rem 1.5rem;
+        text-align: center;
+        border-right: 1px solid rgba(201,168,76,.18);
+      }
+
+      .lp-stat:last-child { border-right: none; }
+
+      .lp-stat-num {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: .4rem;
+      }
+
+      .lp-stat-label {
+        font-size: .78rem;
+        color: rgba(255,255,255,.55);
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 540px) {
+        .lp-stats { grid-template-columns: 1fr; }
+        .lp-stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,.18); padding: 1.75rem 1.5rem; }
+        .lp-stat:last-child { border-bottom: none; }
+      }
+
+      /* ===== GALLERY SECTION ===== */
+      .lp-gallery {
+        background: #0d1b35;
+        padding: 4rem 1.5rem 4.5rem;
+      }
+
+      .lp-gallery-head {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .lp-gallery-head h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -.01em;
+        margin-bottom: .75rem;
+      }
+
+      .lp-gallery-head p {
+        font-size: .88rem;
+        color: rgba(255,255,255,.45);
+        letter-spacing: .04em;
+      }
+
+      .lp-gallery-divider {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        justify-content: center;
+        margin-bottom: .6rem;
+      }
+
+      .lp-gallery-divider::before,
+      .lp-gallery-divider::after {
+        content: '';
+        width: 48px; height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        border-radius: 1px;
+        opacity: .5;
+      }
+
+      .lp-gallery-divider span {
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .lp-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        max-width: 960px;
+        margin: 0 auto 2rem;
+      }
+
+      @media (max-width: 768px) { .lp-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 480px) { .lp-grid { grid-template-columns: repeat(2, 1fr); } }
+
+      .lp-grid-item {
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: #1a2a45;
+        cursor: zoom-in;
+        position: relative;
+      }
+
+      .lp-grid-item img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .35s ease, filter .35s ease;
+      }
+
+      .lp-grid-item::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(135deg, rgba(201,168,76,0) 0%, rgba(10,31,64,0) 100%);
+        transition: background .3s ease;
+        pointer-events: none;
+      }
+
+      .lp-grid-item:hover img {
+        transform: scale(1.07);
+        filter: brightness(1.06);
+      }
+
+      .lp-grid-item:hover::after {
+        background: linear-gradient(135deg, rgba(201,168,76,.22) 0%, rgba(10,31,64,.5) 100%);
+      }
+
+      .lp-gallery-more {
+        display: flex;
+        justify-content: center;
+      }
+
+      .lp-gallery-more a {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .88rem;
+        font-weight: 600;
+        color: var(--gold);
+        text-decoration: none;
+        border: 1px solid rgba(201,168,76,.4);
+        padding: .55rem 1.4rem;
+        border-radius: 2rem;
+        letter-spacing: .04em;
+        transition: background .2s, color .2s, border-color .2s;
+      }
+
+      .lp-gallery-more a:hover {
+        background: rgba(201,168,76,.12);
+        color: var(--gold-light);
+        border-color: rgba(201,168,76,.7);
+      }
+
+      /* ===== LIGHTBOX ===== */
+      .lp-lightbox {
+        display: none;
+        position: fixed; inset: 0;
+        background: rgba(6,15,32,.96);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        cursor: zoom-out;
+      }
+
+      .lp-lightbox.is-active { display: flex; }
+
+      .lp-lightbox img {
+        max-width: 92vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: var(--radius-sm);
+        display: block;
+        user-select: none;
+        box-shadow: 0 8px 48px rgba(0,0,0,.7), 0 0 0 1.5px rgba(201,168,76,.3);
+        cursor: default;
+      }
+
+      .lp-lb-close {
+        position: fixed; top: 1rem; right: 1.25rem;
+        background: none; border: none;
+        color: var(--gold-light);
+        font-size: 2.2rem; line-height: 1;
+        cursor: pointer; opacity: .75; z-index: 10000;
+        transition: opacity .15s;
+      }
+
+      .lp-lb-close:hover { opacity: 1; }
+
+      .lp-lb-prev, .lp-lb-next {
+        position: fixed; top: 50%;
+        transform: translateY(-50%);
+        background: rgba(201,168,76,.12);
+        border: 1px solid rgba(201,168,76,.3);
+        color: var(--gold-light);
+        font-size: 2.4rem; line-height: 1;
+        padding: .4rem .85rem;
+        cursor: pointer; border-radius: var(--radius-sm);
+        opacity: .75; z-index: 10000;
+        transition: opacity .15s, background .15s;
+        user-select: none;
+      }
+
+      .lp-lb-prev:hover, .lp-lb-next:hover {
+        opacity: 1;
+        background: rgba(201,168,76,.25);
+      }
+
+      .lp-lb-prev { left: 1rem; }
+      .lp-lb-next { right: 1rem; }
+
+      .lp-lb-counter {
+        position: fixed; bottom: 1.25rem; left: 50%;
+        transform: translateX(-50%);
+        color: var(--gold);
+        font-size: .78rem; letter-spacing: .1em;
+        pointer-events: none; z-index: 10000;
+      }
+
+      /* ===== FOOTER ===== */
+      .lp-footer {
+        background: #060f20;
+        border-top: 1px solid rgba(201,168,76,.15);
+        color: rgba(255,255,255,.35);
+        font-size: .76rem;
+        text-align: center;
+        padding: 1.5rem;
+        letter-spacing: .03em;
+      }
+
+      .lp-footer a { color: rgba(201,168,76,.65); text-decoration: none; }
+      .lp-footer a:hover { color: var(--gold-light); }
+    </style>
+  </head>
+  <body>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+      <div class="lp-hero-bg"></div>
+      <div class="lp-hero-overlay"></div>
+
+      <nav class="lp-nav">
+        <span class="lp-nav-brand">133 ROTC</span>
+        <a class="lp-nav-link" href="init.html">회칙 보기 →</a>
+      </nav>
+
+      <div class="lp-content">
+        <div class="lp-badge">홍익대학교 ROTC · 55기</div>
+
+        <h1 class="lp-title">
+          <span class="lp-title-gold">133 ROTC</span><br>동기회
+        </h1>
+
+        <div class="lp-divider"></div>
+
+        <p class="lp-subtitle">
+          홍익대학교 학군단 55기 동기회<br>We are one, 133.
+        </p>
+
+        <div class="lp-cta-wrap">
+          <a class="lp-cta" href="init.html">
+            <svg class="lp-cta-icon" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            회칙 열람하기
+          </a>
+        </div>
+      </div>
+
+      <div class="lp-scroll" aria-hidden="true">
+        <div class="lp-scroll-line"></div>
+        <div class="lp-scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="lp-stats">
+      <div class="lp-stat">
+        <div class="lp-stat-num">55기</div>
+        <div class="lp-stat-label">홍익대학교 ROTC</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">133</div>
+        <div class="lp-stat-label">소대 번호</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">회칙</div>
+        <div class="lp-stat-label">동기회 규정</div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <section class="lp-gallery">
+      <div class="lp-gallery-head">
+        <div class="lp-gallery-divider"><span>활동 사진</span></div>
+        <h2>함께한 순간들</h2>
+        <p>133 ROTC 55기 동기회 활동 기록</p>
+      </div>
+
+      <div class="lp-grid">
+        <div class="lp-grid-item"><img src="_images/1.jpeg" alt="활동사진 1" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/2.jpeg" alt="활동사진 2" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/3.jpeg" alt="활동사진 3" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/4.jpeg" alt="활동사진 4" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/5.jpeg" alt="활동사진 5" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/6.jpeg" alt="활동사진 6" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/7.jpeg" alt="활동사진 7" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/8.jpeg" alt="활동사진 8" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/9.jpeg" alt="활동사진 9" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/10.jpeg" alt="활동사진 10" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/11.jpeg" alt="활동사진 11" loading="lazy"></div>
+        <div class="lp-grid-item"><img src="_images/12.jpeg" alt="활동사진 12" loading="lazy"></div>
+      </div>
+
+      <div class="lp-gallery-more">
+        <a href="gallery.html">전체 갤러리 보기 →</a>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lp-lightbox" id="lp-lightbox" role="dialog" aria-modal="true">
+      <img id="lp-lb-img" alt="">
+      <button class="lp-lb-close" aria-label="닫기">&times;</button>
+      <button class="lp-lb-prev" aria-label="이전">&#8249;</button>
+      <button class="lp-lb-next" aria-label="다음">&#8250;</button>
+      <div class="lp-lb-counter" id="lp-lb-counter"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+      홍익대학교 ROTC 55기 동기회 &copy; 2026 &nbsp;|&nbsp;
+      <a href="init.html">회칙 문서 보기</a>
+    </footer>
+
+    <script>
+      (function () {
+        var overlay  = document.getElementById('lp-lightbox');
+        var lbImg    = document.getElementById('lp-lb-img');
+        var lbCtr    = document.getElementById('lp-lb-counter');
+        var items    = Array.from(document.querySelectorAll('.lp-grid-item img'));
+        var current  = 0;
+
+        function show(idx) {
+          current = (idx + items.length) % items.length;
+          lbImg.src = items[current].src;
+          lbCtr.textContent = (current + 1) + ' / ' + items.length;
+          overlay.classList.add('is-active');
+          document.documentElement.style.overflowY = 'hidden';
+        }
+
+        function close() {
+          overlay.classList.remove('is-active');
+          document.documentElement.style.overflowY = '';
+          lbImg.removeAttribute('src');
+        }
+
+        items.forEach(function (img, i) {
+          img.parentElement.addEventListener('click', function () { show(i); });
+        });
+
+        overlay.querySelector('.lp-lb-close').addEventListener('click', close);
+        overlay.querySelector('.lp-lb-prev').addEventListener('click', function () { show(current - 1); });
+        overlay.querySelector('.lp-lb-next').addEventListener('click', function () { show(current + 1); });
+
+        overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+
+        document.addEventListener('keydown', function (e) {
+          if (!overlay.classList.contains('is-active')) return;
+          if (e.key === 'Escape' || e.key === 'Esc') close();
+          if (e.key === 'ArrowLeft')  show(current - 1);
+          if (e.key === 'ArrowRight') show(current + 1);
+        });
+
+        var tx = 0;
+        overlay.addEventListener('touchstart', function (e) { tx = e.changedTouches[0].clientX; }, { passive: true });
+        overlay.addEventListener('touchend',   function (e) {
+          var dx = e.changedTouches[0].clientX - tx;
+          if (Math.abs(dx) > 40) { dx < 0 ? show(current + 1) : show(current - 1); }
+        });
+      })();
+    </script>
+  </body>
+</html>
