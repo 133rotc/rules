@@ -1,6 +1,8 @@
 site:
   title: 133 ROTC
   start_page: 133ROTC::landing.adoc
+urls:
+  html_extension_style: indexify
 content:
   sources:
   - url: https://github.com/133rotc/rules
