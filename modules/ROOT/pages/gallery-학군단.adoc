@@ -1,0 +1,9 @@
+= 학군단
+:page-role: gallery-page
+
+[.photo-grid]
+--
+image::학군단/1.jpg[사진 1]
+image::학군단/2.jpg[사진 2]
+image::학군단/3.jpg[사진 3]
+--

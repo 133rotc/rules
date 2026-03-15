@@ -1,0 +1,12 @@
+= 훈련
+:page-role: gallery-page
+
+[.photo-grid]
+--
+image::훈련/1.jpeg[사진 1]
+image::훈련/2.jpeg[사진 2]
+image::훈련/3.jpeg[사진 3]
+image::훈련/4.jpeg[사진 4]
+image::훈련/5.jpeg[사진 5]
+image::훈련/6.jpeg[사진 6]
+--
