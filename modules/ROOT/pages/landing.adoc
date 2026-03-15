@@ -1,3 +1,5 @@
 = 133 ROTC
 :page-layout: landing
 :page-role: landing
+// 갤러리에 표시할 이미지 목록 — 사진 추가 시 여기에 파일명만 추가
+:page-gallery-images: 1.jpeg,2.jpeg,3.jpeg,4.jpeg,5.jpeg,6.jpeg,7.jpeg,8.jpeg,9.jpeg,10.jpeg,11.jpeg,12.jpeg
