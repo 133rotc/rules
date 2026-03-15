@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>133 ROTC — 홍익대학교 ROTC 55기 동기회</title>
+    <meta name="description" content="홍익대학교 학군단 55기 동기회 공식 사이트">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --navy-dark: #0a1f40;
+        --navy:      #1a3a6c;
+        --gold:      #c9a84c;
+        --gold-light:#e8c97a;
+        --radius-sm: 6px;
+      }
+
+      body {
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--navy-dark);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* ===== HERO ===== */
+      .lp-hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .lp-hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url({{{uiRootPath}}}/img/landing.jpg);
+        background-size: cover;
+        background-position: center;
+        filter: brightness(.42);
+        transform: scale(1.05);
+        transition: transform 10s ease;
+        will-change: transform;
+      }
+
+      .lp-hero:hover .lp-hero-bg { transform: scale(1.0); }
+
+      .lp-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10,31,64,.4) 0%,
+          rgba(10,31,64,.1) 45%,
+          rgba(10,31,64,.72) 100%
+        );
+      }
+
+      /* ===== TOP NAV ===== */
+      .lp-nav {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+        background: linear-gradient(180deg, rgba(10,31,64,.75) 0%, transparent 100%);
+      }
+
+      .lp-nav-brand {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--gold-light);
+        text-decoration: none;
+        letter-spacing: .06em;
+        text-shadow: 0 1px 6px rgba(0,0,0,.5);
+      }
+
+      .lp-nav-link {
+        font-size: .85rem;
+        color: rgba(255,255,255,.85);
+        text-decoration: none;
+        border: 1px solid rgba(201,168,76,.45);
+        padding: .4rem 1.1rem;
+        border-radius: 2rem;
+        backdrop-filter: blur(4px);
+        transition: background .2s, color .2s, border-color .2s;
+      }
+
+      .lp-nav-link:hover {
+        background: rgba(201,168,76,.18);
+        color: var(--gold-light);
+        border-color: rgba(201,168,76,.8);
+      }
+
+      /* ===== HERO CONTENT ===== */
+      .lp-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        animation: lp-up .9s cubic-bezier(.22,1,.36,1) both;
+      }
+
+      @keyframes lp-up {
+        from { opacity: 0; transform: translateY(32px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .lp-badge {
+        display: inline-block;
+        background: rgba(201,168,76,.14);
+        border: 1px solid rgba(201,168,76,.5);
+        color: var(--gold-light);
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        padding: .35rem 1.1rem;
+        border-radius: 2rem;
+        margin-bottom: 1.6rem;
+        backdrop-filter: blur(6px);
+      }
+
+      .lp-title {
+        font-size: clamp(3rem, 9vw, 5.5rem);
+        font-weight: 900;
+        line-height: 1.0;
+        color: #fff;
+        letter-spacing: -.02em;
+        text-shadow: 0 2px 28px rgba(0,0,0,.55);
+        margin-bottom: .55rem;
+      }
+
+      .lp-title-gold {
+        background: linear-gradient(90deg, #c9a84c 0%, #f0d87a 55%, #c9a84c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .lp-divider {
+        width: 52px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        border-radius: 2px;
+        margin: 1.4rem auto 1.5rem;
+        opacity: .85;
+      }
+
+      .lp-subtitle {
+        font-size: clamp(.95rem, 2.8vw, 1.15rem);
+        color: rgba(255,255,255,.8);
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: .02em;
+        margin-bottom: 2.75rem;
+      }
+
+      /* ===== CTA ===== */
+      .lp-cta-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .lp-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: .65rem;
+        background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+        color: var(--navy-dark) !important;
+        font-size: 1.02rem;
+        font-weight: 800;
+        letter-spacing: .04em;
+        padding: .9rem 2.4rem;
+        border-radius: 3rem;
+        text-decoration: none !important;
+        box-shadow: 0 4px 28px rgba(201,168,76,.5), 0 1px 4px rgba(0,0,0,.25);
+        transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      }
+
+      .lp-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 36px rgba(201,168,76,.65), 0 2px 8px rgba(0,0,0,.3);
+        filter: brightness(1.07);
+      }
+
+      .lp-cta:active { transform: translateY(0); }
+
+      .lp-cta-icon {
+        width: 20px; height: 20px;
+        fill: none;
+        stroke: var(--navy-dark);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+      }
+
+      .lp-cta-sub {
+        font-size: .82rem;
+        color: rgba(255,255,255,.5);
+        text-decoration: none;
+        letter-spacing: .02em;
+        transition: color .2s;
+      }
+
+      .lp-cta-sub:hover { color: rgba(255,255,255,.85); }
+
+      /* ===== SCROLL HINT ===== */
+      .lp-scroll {
+        position: absolute;
+        bottom: 2rem; left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .4rem;
+        opacity: .55;
+        animation: lp-bob 2.2s ease-in-out infinite;
+      }
+
+      @keyframes lp-bob {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50%       { transform: translateX(-50%) translateY(9px); }
+      }
+
+      .lp-scroll-line {
+        width: 1px; height: 36px;
+        background: linear-gradient(180deg, transparent 0%, var(--gold) 100%);
+      }
+
+      .lp-scroll-dot {
+        width: 5px; height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+
+      /* ===== STATS STRIP ===== */
+      .lp-stats {
+        background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+        border-top: 3px solid var(--gold);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .lp-stat {
+        padding: 2.75rem 1.5rem;
+        text-align: center;
+        border-right: 1px solid rgba(201,168,76,.18);
+      }
+
+      .lp-stat:last-child { border-right: none; }
+
+      .lp-stat-num {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: .4rem;
+      }
+
+      .lp-stat-label {
+        font-size: .78rem;
+        color: rgba(255,255,255,.55);
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 540px) {
+        .lp-stats { grid-template-columns: 1fr; }
+        .lp-stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,.18); padding: 1.75rem 1.5rem; }
+        .lp-stat:last-child { border-bottom: none; }
+      }
+
+      /* ===== FOOTER ===== */
+      .lp-footer {
+        background: #060f20;
+        border-top: 1px solid rgba(201,168,76,.15);
+        color: rgba(255,255,255,.35);
+        font-size: .76rem;
+        text-align: center;
+        padding: 1.5rem;
+        letter-spacing: .03em;
+      }
+
+      .lp-footer a { color: rgba(201,168,76,.65); text-decoration: none; }
+      .lp-footer a:hover { color: var(--gold-light); }
+    </style>
+  </head>
+  <body>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+      <div class="lp-hero-bg"></div>
+      <div class="lp-hero-overlay"></div>
+
+      <nav class="lp-nav">
+        <span class="lp-nav-brand">133 ROTC</span>
+        <a class="lp-nav-link" href="{{{relativize page.next.url}}}">회칙 보기 →</a>
+      </nav>
+
+      <div class="lp-content">
+        <div class="lp-badge">홍익대학교 ROTC · 55기</div>
+
+        <h1 class="lp-title">
+          <span class="lp-title-gold">133 ROTC</span><br>동기회
+        </h1>
+
+        <div class="lp-divider"></div>
+
+        <p class="lp-subtitle">
+          홍익대학교 학군단 55기 동기회<br>We are one, 133.
+        </p>
+
+        <div class="lp-cta-wrap">
+          <a class="lp-cta" href="{{{relativize page.next.url}}}">
+            <svg class="lp-cta-icon" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            회칙 열람하기
+          </a>
+        </div>
+      </div>
+
+      <div class="lp-scroll" aria-hidden="true">
+        <div class="lp-scroll-line"></div>
+        <div class="lp-scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="lp-stats">
+      <div class="lp-stat">
+        <div class="lp-stat-num">55기</div>
+        <div class="lp-stat-label">홍익대학교 ROTC</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">133</div>
+        <div class="lp-stat-label">소대 번호</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">회칙</div>
+        <div class="lp-stat-label">동기회 규정</div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+      홍익대학교 ROTC 55기 동기회 &copy; {{year}} &nbsp;|&nbsp;
+      <a href="{{{relativize page.next.url}}}">회칙 문서 보기</a>
+    </footer>
+
+  </body>
+</html>
