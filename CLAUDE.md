@@ -9,12 +9,32 @@ This repo is the **Antora playbook + UI bundle** for publishing the 홍익대학
 ## Commands
 
 ```bash
-npm install          # Install Antora CLI and site generator
-npm run build        # Generate site (reads content from remote branches via antora-source.yml)
-npm run dev          # Generate site with --fetch (fetches latest from remote)
+antora antora-source.yml          # Generate site (reads content from remote GitHub branches)
+antora antora-source.yml --fetch  # Generate site AND fetch latest from remote
 ```
 
 Output is written to `build/site/`.
+
+## Local Development
+
+로컬에서 빌드하려면 `antora-source.yml`의 content source URL을 `./`로 변경한 뒤 실행합니다.
+
+**`antora-source.yml` 수정:**
+```yaml
+content:
+  sources:
+  # - url: https://github.com/133rotc/rules  # 원격 (CI/배포용)
+  - url: ./                                   # 로컬 (개발용)
+    branches: HEAD                            # 현재 체크아웃된 브랜치 사용
+```
+
+**실행:**
+```bash
+git checkout 2026.1.1   # 콘텐츠 브랜치로 이동
+antora antora-source.yml
+```
+
+> 로컬 빌드 후에는 `antora-source.yml`을 원래대로 되돌리고 커밋하세요. `url: https://github.com/133rotc/rules` 상태로 `main`에 머지해야 CI가 정상 동작합니다.
 
 ## Architecture
 
