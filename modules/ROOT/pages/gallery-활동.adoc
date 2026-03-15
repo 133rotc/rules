@@ -8,4 +8,8 @@ image::활동/2.jpg[사진 2]
 image::활동/3.jpeg[사진 3]
 image::활동/4.jpeg[사진 4]
 image::활동/5.jpeg[사진 5]
+image::활동/6.JPG[사진 6]
+image::활동/7.JPG[사진 7]
+image::활동/8.JPG[사진 8]
+image::활동/9.JPG[사진 9]
 --
