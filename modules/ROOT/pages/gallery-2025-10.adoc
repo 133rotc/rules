@@ -3,8 +3,8 @@
 
 [.photo-grid]
 --
-image::1.jpeg[사진 1]
-image::2.jpeg[사진 2]
-image::3.jpeg[사진 3]
-image::4.jpeg[사진 4]
+image::2025-10-02/1.jpeg[사진 1]
+image::2025-10-02/2.jpeg[사진 2]
+image::2025-10-02/3.jpeg[사진 3]
+image::2025-10-02/4.jpeg[사진 4]
 --
