@@ -1,0 +1,10 @@
+= 2025년 12월 20일 — 송년회 2부
+:page-role: gallery-page
+
+[.photo-grid]
+--
+image::9.jpeg[사진 1]
+image::10.jpeg[사진 2]
+image::11.jpeg[사진 3]
+image::12.jpeg[사진 4]
+--
