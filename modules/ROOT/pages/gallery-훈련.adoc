@@ -9,4 +9,6 @@ image::훈련/3.jpeg[사진 3]
 image::훈련/4.jpeg[사진 4]
 image::훈련/5.jpeg[사진 5]
 image::훈련/6.jpeg[사진 6]
+image::훈련/1422113126880.jpeg[사진 7]
+image::훈련/1422113128176.jpeg[사진 8]
 --

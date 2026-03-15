@@ -7,3 +7,7 @@ image::학군단/1.jpg[사진 1]
 image::학군단/2.jpg[사진 2]
 image::학군단/3.jpg[사진 3]
 --
+
+== 영상
+
+video::학군단/4.mp4[width=100%,opts="autoplay,muted,loop"]

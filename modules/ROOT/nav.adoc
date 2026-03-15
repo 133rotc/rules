@@ -4,6 +4,7 @@
 * xref:gallery.adoc[]
 ** xref:gallery-훈련.adoc[훈련]
 ** xref:gallery-학군단.adoc[학군단]
+** xref:gallery-활동.adoc[활동]
 ** xref:gallery-2025-12.adoc[12월 20일 — 송년회]
 ** xref:gallery-2025-10.adoc[10월 2일]
 

@@ -6,6 +6,7 @@
 
 * xref:gallery-훈련.adoc[훈련]
 * xref:gallery-학군단.adoc[학군단]
+* xref:gallery-활동.adoc[활동]
 
 == 2025년
 
