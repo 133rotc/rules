@@ -4,8 +4,8 @@
   "description": "홍익대학교 ROTC 55기 동기회 회칙",
   "private": true,
   "scripts": {
-    "build": "antora antora-source.yml",
-    "dev": "antora antora-source.yml --fetch"
+    "build": "antora antora-source.yml --fetch",
+    "dev": "antora antora-local.yml"
   },
   "devDependencies": {
     "@antora/cli": "^3.1.0",
