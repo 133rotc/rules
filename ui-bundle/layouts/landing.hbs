@@ -246,46 +246,6 @@
         border-radius: 50%;
       }
 
-      /* ===== STATS STRIP ===== */
-      .lp-stats {
-        background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
-        border-top: 3px solid var(--gold);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .lp-stat {
-        padding: 2.75rem 1.5rem;
-        text-align: center;
-        border-right: 1px solid rgba(201,168,76,.18);
-      }
-
-      .lp-stat:last-child { border-right: none; }
-
-      .lp-stat-num {
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 1;
-        background: linear-gradient(90deg, var(--gold), var(--gold-light));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: .4rem;
-      }
-
-      .lp-stat-label {
-        font-size: .78rem;
-        color: rgba(255,255,255,.55);
-        letter-spacing: .1em;
-        text-transform: uppercase;
-      }
-
-      @media (max-width: 540px) {
-        .lp-stats { grid-template-columns: 1fr; }
-        .lp-stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,.18); padding: 1.75rem 1.5rem; }
-        .lp-stat:last-child { border-bottom: none; }
-      }
-
       /* ===== GALLERY SECTION ===== */
       .lp-gallery {
         background: #0d1b35;
@@ -528,22 +488,6 @@
         <div class="lp-scroll-dot"></div>
       </div>
     </section>
-
-    <!-- STATS -->
-    <div class="lp-stats">
-      <div class="lp-stat">
-        <div class="lp-stat-num">55기</div>
-        <div class="lp-stat-label">홍익대학교 ROTC</div>
-      </div>
-      <div class="lp-stat">
-        <div class="lp-stat-num">133</div>
-        <div class="lp-stat-label">소대 번호</div>
-      </div>
-      <div class="lp-stat">
-        <div class="lp-stat-num">회칙</div>
-        <div class="lp-stat-label">동기회 규정</div>
-      </div>
-    </div>
 
     <!-- GALLERY -->
     <section class="lp-gallery">
